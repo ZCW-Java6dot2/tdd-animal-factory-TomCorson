@@ -5,6 +5,8 @@ import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
 
+import java.util.Date;
+
 /**
  * @author leon on 4/19/18.
  */
@@ -13,8 +15,12 @@ public class CatHouseTest {
     @Test
     public void addTest() {
         // given
-        Cat expected = new Cat();
+        String name = "FluffyPoofyMcpoferson";
+        Date bday = new Date();
+        Integer defaultId = 1;
+        Cat expected = new Cat(name,bday,defaultId);
         Integer id = expected.getId();
+
 
         // when
         CatHouse.add(expected);
