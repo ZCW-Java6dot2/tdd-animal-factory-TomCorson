@@ -75,6 +75,23 @@ public class DogHouseTest {
         // then
         Assert.assertNull(retrievedDog);
     }
+    @Test
+    public void removeDogById() {
+        String name = "Soup";
+        Date bday = new Date();
+        Integer defaultId = 18;
+        // given
+        Dog dogToBeAdded = new Dog(name,bday,defaultId);
+        DogHouse.add(dogToBeAdded);
+        Integer id = dogToBeAdded.getId();
+
+        // when
+        DogHouse.remove(id);
+        Dog retrievedDog =DogHouse.getDogById(id);
+
+        // then
+        Assert.assertNull(retrievedDog);
+    }
 
     // TODO - Create tests for `Integer getNumberOfCats()`
     @Test
@@ -95,23 +112,7 @@ public class DogHouseTest {
         Assert.assertEquals(expected, actual);
     }
 
-        @Test
-        public void removeTest() {
-            String name = "newSoup";
-            Date bday = new Date();
-            Integer defaultId = 188;
-            // given
-            Dog dogToBeAdded = new Dog(name,bday,defaultId);
-            DogHouse.add(dogToBeAdded);
-            Integer id = dogToBeAdded.getId();
 
-            // when
-            DogHouse.remove(dogToBeAdded);
-            Dog retrievedDog =DogHouse.getDogById(id);
-
-            // then
-            Assert.assertNull(retrievedDog);
-        }
 
     }
 

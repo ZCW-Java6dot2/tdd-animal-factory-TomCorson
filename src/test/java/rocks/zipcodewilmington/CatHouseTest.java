@@ -1,6 +1,7 @@
 package rocks.zipcodewilmington;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
@@ -10,7 +11,14 @@ import java.util.Date;
 /**
  * @author leon on 4/19/18.
  */
+
+
 public class CatHouseTest {
+
+    @Before
+    public void init() {
+        CatHouse testCatHouse = new CatHouse();
+    }
     // TODO - Create tests for `void add(Cat cat)`
     @Test
     public void addTest() {
@@ -29,11 +37,8 @@ public class CatHouseTest {
         // then
         Assert.assertEquals(expected, actual);
     }
-
-    // TODO - Create tests for `void remove(Integer id)`
     @Test
-    public void removeTest() {
-        // given
+    public void removeCatTest2(){
         Cat catToBeAdded = new Cat(null, null, 0);
         CatHouse.add(catToBeAdded);
         Integer id = catToBeAdded.getId();
@@ -45,6 +50,11 @@ public class CatHouseTest {
         // then
         Assert.assertNull(retrievedCat);
     }
+
+
+    // TODO - Create tests for `void remove(Integer id)`
+
+
 
 
     // TODO - Create tests for `void remove(Cat cat)`
@@ -83,9 +93,6 @@ public class CatHouseTest {
 
         // then
         Assert.assertEquals(expected, actual);
-
-
-
 
     }
 }
